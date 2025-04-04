@@ -6,11 +6,21 @@ interface InputSectionProps {
   onChange: (field: keyof MVNOInputs, value: number) => void;
 }
 
-export function InputSection({ inputs, onChange }: InputSectionProps) {
-  const handleChange = (field: keyof MVNOInputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value) || 0;
-    onChange(field, value);
-  };
+const handleChange = (field: keyof MVNOInputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const rawValue = e.target.value;
+
+  // If input is empty, set it as an empty string
+  if (rawValue === "") {
+    onChange(field, "" as unknown as number); // Trick TypeScript
+    return;
+  }
+
+  // Otherwise, parse the number normally
+  const value = parseFloat(rawValue);
+  onChange(field, value);
+};
+
+
 
   const inputClasses = "mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-[#F7470F] focus:border-[#F7470F] transition-colors duration-200";
   const labelClasses = "block text-sm font-medium text-[#3A3A3A]";
