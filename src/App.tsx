@@ -51,7 +51,7 @@ function App() {
             <Calculator className="h-8 w-8 text-[#F7470F]" />
           </div>
           <a
-            href="https://spenza.com"
+            href="https://spenza.com/contact-the-telecom-expense-management-experts/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#F7470F] hover:bg-[#d63d0d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F7470F] transition-colors duration-200"
