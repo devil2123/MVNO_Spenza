@@ -3,7 +3,8 @@ import { MVNOInputs, MonthlyProjection } from '../types';
 export function calculateProjections(inputs: MVNOInputs): MonthlyProjection[] {
   const projections: MonthlyProjection[] = [];
   let currentSubscribers = inputs.initialSubscribers;
-  let cumulativeProfit = -(inputs.licenseFees + inputs.itSetupCosts + inputs.initialMarketing);
+  let cumulativeProfit = -inputs.upfrontCosts;
+  const profitPerUser = inputs.arpu - inputs.acpu;
 
   for (let month = 1; month <= inputs.projectionMonths; month++) {
     // Calculate subscriber changes
@@ -15,13 +16,7 @@ export function calculateProjections(inputs: MVNOInputs): MonthlyProjection[] {
     const monthlyRevenue = currentSubscribers * inputs.arpu;
 
     // Calculate costs
-    const fixedCosts = inputs.monthlySalaries + inputs.monthlyITSupport + inputs.customerServiceCost;
-    const variableCosts = currentSubscribers * (
-      inputs.wholesaleNetworkFee +
-      inputs.simCardCost +
-      inputs.marketingPerSubscriber
-    );
-    const totalCosts = fixedCosts + variableCosts;
+    const totalCosts = inputs.monthlyOperatingExpenses + (currentSubscribers * inputs.acpu);
 
     // Calculate profit
     const monthlyProfit = monthlyRevenue - totalCosts;
@@ -33,7 +28,8 @@ export function calculateProjections(inputs: MVNOInputs): MonthlyProjection[] {
       revenue: monthlyRevenue,
       costs: totalCosts,
       profit: monthlyProfit,
-      cumulativeProfit
+      cumulativeProfit,
+      profitPerUser
     });
   }
 
