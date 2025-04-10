@@ -6,28 +6,16 @@ import { InputSection } from './components/InputSection';
 import { ResultsSection } from './components/ResultsSection';
 
 const initialInputs: MVNOInputs = {
-  // Upfront Costs
-  licenseFees: 10000,
-  itSetupCosts: 25000,
-  initialMarketing: 15000,
-  
-  // Monthly Operating Expenses
-  monthlySalaries: 5000,
-  monthlyITSupport: 1500,
-  customerServiceCost: 1000,
-  
-  // Per Subscriber Costs
-  wholesaleNetworkFee: 15,
-  simCardCost: 5,
-  marketingPerSubscriber: 10,
+  // Upfront and Operating Costs
+  upfrontCosts: 50000,
+  monthlyOperatingExpenses: 7500,
   
   // Revenue & Subscriber Metrics
+  initialSubscribers: 1000,
   arpu: 40,
+  acpu: 30,
   monthlyGrowthRate: 0.15,
   churnRate: 0.02,
-  initialSubscribers: 1000,
-  
-  // Time Horizon
   projectionMonths: 36
 };
 
@@ -65,15 +53,12 @@ function App() {
           <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#144C94]">
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-[#3A3A3A]">Input Parameters</h2>
-              <p className="mt-2 text-sm text-gray-600">Please enter all costs in US dollars ($)</p>
+              <p className="mt-2 text-sm text-gray-600">Please enter all monetary values in US dollars ($)</p>
             </div>
             <InputSection inputs={inputs} onChange={handleInputChange} />
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-[#3A3A3A]">Projections & Analysis</h2>
-            <ResultsSection projections={projections} />
-          </div>
+          <ResultsSection projections={projections} inputs={inputs} />
         </div>
       </div>
     </div>
