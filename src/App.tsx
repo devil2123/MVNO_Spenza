@@ -14,9 +14,9 @@ const initialInputs: MVNOInputs = {
   initialSubscribers: 1000,
   arpu: 40,
   acpu: 30,
-  monthlyGrowthRate: 0.15,
+  monthlyGrowthRate: 0.10,
   churnRate: 0.02,
-  projectionMonths: 36
+  projectionMonths: 12
 };
 
 function App() {
