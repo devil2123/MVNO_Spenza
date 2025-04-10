@@ -1,26 +1,14 @@
 export interface MVNOInputs {
-  // Upfront Costs
-  licenseFees: number;
-  itSetupCosts: number;
-  initialMarketing: number;
-  
-  // Monthly Operating Expenses
-  monthlySalaries: number;
-  monthlyITSupport: number;
-  customerServiceCost: number;
-  
-  // Per Subscriber Costs
-  wholesaleNetworkFee: number;
-  simCardCost: number;
-  marketingPerSubscriber: number;
+  // Upfront and Operating Costs
+  upfrontCosts: number;
+  monthlyOperatingExpenses: number;
   
   // Revenue & Subscriber Metrics
+  initialSubscribers: number;
   arpu: number;
+  acpu: number;
   monthlyGrowthRate: number;
   churnRate: number;
-  initialSubscribers: number;
-  
-  // Time Horizon
   projectionMonths: number;
 }
 
@@ -31,4 +19,5 @@ export interface MonthlyProjection {
   costs: number;
   profit: number;
   cumulativeProfit: number;
+  profitPerUser: number;
 }
