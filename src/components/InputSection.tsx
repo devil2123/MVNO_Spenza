@@ -36,7 +36,7 @@ export function InputSection({ inputs, onChange }: InputSectionProps) {
             />
           </div>
           <p className={descriptionClasses}>
-            This cost includes one-time expenses such as License Fees, IT Setup Costs, and Initial Marketing.
+            One-time expenses for licenses, IT setup, and initial marketing.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export function InputSection({ inputs, onChange }: InputSectionProps) {
             />
           </div>
           <p className={descriptionClasses}>
-            This includes recurring monthly costs such as employee salaries, IT support, and customer service operations.
+            Ongoing costs for salaries, IT support, and customer service.
           </p>
         </div>
 
