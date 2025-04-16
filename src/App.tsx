@@ -28,36 +28,41 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
-          {/* Left section: Heading, Subheading, and Logo */}
-          <div className="flex flex-col md:flex-row md:space-x-6 mb-4 md:mb-0 w-full">
+        {/* Top Section with Heading and Button */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-8 w-full">
+          {/* Left section: Logo and Heading */}
+          <div className="flex flex-col md:flex-row md:space-x-6 w-full mb-4 md:mb-0">
             <img
               src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
               alt="Spenza Logo"
-              className="h-10 w-auto mt-1 mb-4 md:mb-0"
+              className="h-10 w-auto mt-1"
             />
             <div className="flex flex-col w-full">
               <div className="flex items-center space-x-3 mb-4">
                 <h1 className="text-4xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
                 <Calculator className="h-7 w-7 text-[#F7470F]" />
               </div>
-              <p className="text-base text-gray-600 max-w-2xl">
-                The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business,
-                enabling smart budgeting and strategic decision-making.
-              </p>
             </div>
           </div>
 
-          {/* Right section: CTA Button */}
+          {/* Right section: CTA Button aligned with main heading */}
           <a
             href="https://spenza.com/contact-the-telecom-expense-management-experts/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#F7470F] hover:bg-[#d63d0d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F7470F] transition-colors duration-200 mt-4 md:mt-0"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#F7470F] hover:bg-[#d63d0d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F7470F] transition-colors duration-200"
           >
             Want to Launch an MVNO? Contact Us
             <ExternalLink className="ml-2 h-5 w-5" />
           </a>
+        </div>
+
+        {/* Subheading: Spanning the whole width of the page */}
+        <div className="w-full mb-8">
+          <p className="text-base text-gray-600 text-center max-w-none">
+            The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business,
+            enabling smart budgeting and strategic decision-making.
+          </p>
         </div>
 
         {/* Input + Results Section */}
