@@ -27,50 +27,56 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Top Section with Heading and Button */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-8 w-full">
-          {/* Left section: Logo and Heading */}
-          <div className="flex flex-col md:flex-row md:space-x-6 w-full mb-4 md:mb-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-6">
+          <div className="flex items-center space-x-4">
             <img
               src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
               alt="Spenza Logo"
-              className="h-10 w-auto mt-1"
+              className="h-10 w-auto"
             />
-            <div className="flex flex-col w-full">
-              <div className="flex items-center space-x-3 mb-4">
-                <h1 className="text-4xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
-                <Calculator className="h-7 w-7 text-[#F7470F]" />
-              </div>
-            </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#144C94] flex items-center space-x-2">
+              <span>MVNO Launch Calculator</span>
+              <Calculator className="h-6 w-6 text-[#F7470F]" />
+            </h1>
           </div>
 
-          {/* Right section: CTA Button aligned with main heading */}
           <a
             href="https://spenza.com/contact-the-telecom-expense-management-experts/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#F7470F] hover:bg-[#d63d0d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F7470F] transition-colors duration-200"
+            className="mt-4 lg:mt-0 inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#F7470F] hover:bg-[#d63d0d] transition duration-200"
           >
             Want to Launch an MVNO? Contact Us
             <ExternalLink className="ml-2 h-5 w-5" />
           </a>
         </div>
 
-        {/* Subheading: Spanning the whole width of the page */}
-        <div className="w-full mb-8">
-          <p className="text-base text-gray-600 text-center max-w-none">
+        {/* Subheading */}
+        <div className="text-center mb-6">
+          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
             The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business,
             enabling smart budgeting and strategic decision-making.
           </p>
         </div>
 
-        {/* Input + Results Section */}
+        {/* Additional Sub Copy */}
+        <div className="text-center mb-10">
+          <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+            This tool helps you estimate the costs of starting your MVNO, covering everything from setup and licensing to ongoing operations. 
+            It simplifies budgeting and planning, giving you a clear financial roadmap for a successful launch. 
+            Ideal for startups and established operators alike, it ensures you're prepared for the financial aspects of entering the MVNO market.
+          </p>
+        </div>
+
+        {/* Calculator Sections */}
         <div className="space-y-8">
-          <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#144C94]">
+          <div className="bg-white rounded-xl shadow p-6 border-t-4 border-[#144C94]">
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-[#3A3A3A]">Input Parameters</h2>
-              <p className="mt-2 text-sm text-gray-600">Please enter all monetary values in US dollars ($)</p>
+              <p className="mt-1 text-sm text-gray-600">Please enter all monetary values in US dollars ($)</p>
             </div>
             <InputSection inputs={inputs} onChange={handleInputChange} />
           </div>
