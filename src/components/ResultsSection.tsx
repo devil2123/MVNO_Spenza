@@ -68,7 +68,7 @@ export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
         </div>
         
         <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#F7470F]">
-          <h3 className="text-lg font-medium text-[#3A3A3A]">Monthly Revenue</h3>
+          <h3 className="text-lg font-medium text-[#3A3A3A]">Final Month Revenue</h3>
           <p className="mt-2 text-3xl font-semibold text-[#F7470F]">
             {formatCurrency(lastMonth.revenue)}
           </p>
