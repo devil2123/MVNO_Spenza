@@ -49,7 +49,7 @@ export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
           className="inline-flex items-center px-4 py-2 bg-[#144C94] text-white rounded-md hover:bg-[#0f3a70] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#144C94] transition-colors duration-200"
         >
           <Mail className="w-4 h-4 mr-2" />
-          Mail the Analysis
+          Send Me the Analysis Report
         </button>
       </div>
 
