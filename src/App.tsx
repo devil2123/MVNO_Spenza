@@ -1,3 +1,24 @@
+import React, { useState } from 'react';
+import { Calculator, ExternalLink } from 'lucide-react';
+import { MVNOInputs } from './types';
+import { calculateProjections } from './utils/calculations';
+import { InputSection } from './components/InputSection';
+import { ResultsSection } from './components/ResultsSection';
+
+const initialInputs: MVNOInputs = {
+  // Upfront and Operating Costs
+  upfrontCosts: 50000,
+  monthlyOperatingExpenses: 7500,
+
+  // Revenue & Subscriber Metrics
+  initialSubscribers: 1000,
+  arpu: 40,
+  acpu: 30,
+  monthlyGrowthRate: 0.10,
+  churnRate: 0.02,
+  projectionMonths: 12
+};
+
 function App() {
   const [inputs, setInputs] = useState<MVNOInputs>(initialInputs);
 
@@ -51,3 +72,5 @@ function App() {
     </div>
   );
 }
+
+export default App;
