@@ -1,24 +1,3 @@
-import React, { useState } from 'react';
-import { Calculator, ExternalLink } from 'lucide-react';
-import { MVNOInputs } from './types';
-import { calculateProjections } from './utils/calculations';
-import { InputSection } from './components/InputSection';
-import { ResultsSection } from './components/ResultsSection';
-
-const initialInputs: MVNOInputs = {
-  // Upfront and Operating Costs
-  upfrontCosts: 50000,
-  monthlyOperatingExpenses: 7500,
-
-  // Revenue & Subscriber Metrics
-  initialSubscribers: 1000,
-  arpu: 40,
-  acpu: 30,
-  monthlyGrowthRate: 0.10,
-  churnRate: 0.02,
-  projectionMonths: 12
-};
-
 function App() {
   const [inputs, setInputs] = useState<MVNOInputs>(initialInputs);
 
@@ -32,14 +11,19 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
-          <div className="flex items-center space-x-4 mb-4 md:mb-0">
-            <img
-              src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
-              alt="Spenza Logo"
-              className="h-8 w-auto"
-            />
-            <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
-            <Calculator className="h-8 w-8 text-[#F7470F]" />
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center md:space-x-4 mb-4 md:mb-0">
+            <div className="flex items-center space-x-4">
+              <img
+                src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
+                alt="Spenza Logo"
+                className="h-8 w-auto"
+              />
+              <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
+              <Calculator className="h-8 w-8 text-[#F7470F]" />
+            </div>
+            <p className="text-gray-600 text-sm md:text-base max-w-2xl">
+              The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business, enabling smart budgeting and strategic decision-making.
+            </p>
           </div>
           <a
             href="https://spenza.com/contact-the-telecom-expense-management-experts/"
@@ -67,5 +51,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
