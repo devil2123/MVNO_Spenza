@@ -6,11 +6,8 @@ import { InputSection } from './components/InputSection';
 import { ResultsSection } from './components/ResultsSection';
 
 const initialInputs: MVNOInputs = {
-  // Upfront and Operating Costs
   upfrontCosts: 50000,
   monthlyOperatingExpenses: 7500,
-
-  // Revenue & Subscriber Metrics
   initialSubscribers: 1000,
   arpu: 40,
   acpu: 30,
@@ -32,20 +29,26 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
-          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center md:space-x-4 mb-4 md:mb-0">
-            <div className="flex items-center space-x-4">
-              <img
-                src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
-                alt="Spenza Logo"
-                className="h-8 w-auto"
-              />
-              <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
-              <Calculator className="h-8 w-8 text-[#F7470F]" />
+          {/* Left section: Heading and Subtext */}
+          <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-start md:space-x-6 mb-4 md:mb-0">
+            <img
+              src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
+              alt="Spenza Logo"
+              className="h-10 w-auto mt-1"
+            />
+            <div>
+              <div className="flex items-center space-x-3">
+                <h1 className="text-4xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
+                <Calculator className="h-7 w-7 text-[#F7470F]" />
+              </div>
+              <p className="mt-2 text-gray-600 text-base max-w-2xl">
+                The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business,
+                enabling smart budgeting and strategic decision-making.
+              </p>
             </div>
-            <p className="text-gray-600 text-sm md:text-base max-w-2xl">
-              The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business, enabling smart budgeting and strategic decision-making.
-            </p>
           </div>
+
+          {/* Right section: CTA */}
           <a
             href="https://spenza.com/contact-the-telecom-expense-management-experts/"
             target="_blank"
@@ -57,6 +60,7 @@ function App() {
           </a>
         </div>
 
+        {/* Input + Results Section */}
         <div className="space-y-8">
           <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#144C94]">
             <div className="mb-6">
