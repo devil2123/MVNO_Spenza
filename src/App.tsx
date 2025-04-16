@@ -31,18 +31,23 @@ function App() {
         
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-6">
+          {/* Left: Title with Icon */}
           <div className="flex items-center space-x-4">
             <img
               src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
               alt="Spenza Logo"
               className="h-10 w-auto"
             />
-            <h1 className="text-3xl md:text-4xl font-bold text-[#144C94] flex items-center space-x-2">
-              <span>MVNO Launch Calculator</span>
-              <Calculator className="h-6 w-6 text-[#F7470F]" />
-            </h1>
+            <div className="inline-flex items-center space-x-3">
+              <h1 className="text-3xl md:text-4xl font-bold text-[#144C94]">
+                MVNO Launch Calculator
+              </h1>
+              {/* Adjust icon size to match heading */}
+              <Calculator className="h-8 w-8 md:h-9 md:w-9 text-[#F7470F]" />
+            </div>
           </div>
 
+          {/* Right: CTA Button */}
           <a
             href="https://spenza.com/contact-the-telecom-expense-management-experts/"
             target="_blank"
@@ -54,10 +59,10 @@ function App() {
           </a>
         </div>
 
-        {/* Subheading - now replaced with new text */}
+        {/* Subheading - smaller text, 2–3 lines */}
         <div className="text-center mb-10">
-          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
-            This tool helps you estimate the costs of starting your MVNO, covering everything from setup 
+          <p className="mx-auto text-gray-700 text-sm md:text-base leading-relaxed max-w-2xl">
+            This tool helps you estimate the costs of starting your MVNO, covering everything from setup
             and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear 
             financial roadmap for a successful launch. Ideal for startups and established operators alike, 
             it ensures you're prepared for the financial aspects of entering the MVNO market.
@@ -66,6 +71,7 @@ function App() {
 
         {/* Calculator Sections */}
         <div className="space-y-8">
+          {/* Input Section */}
           <div className="bg-white rounded-xl shadow p-6 border-t-4 border-[#144C94]">
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-[#3A3A3A]">Input Parameters</h2>
@@ -76,6 +82,7 @@ function App() {
             <InputSection inputs={inputs} onChange={handleInputChange} />
           </div>
 
+          {/* Results Section */}
           <ResultsSection projections={projections} inputs={inputs} />
         </div>
       </div>
