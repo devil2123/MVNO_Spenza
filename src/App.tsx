@@ -61,8 +61,8 @@ function App() {
 
                {/* Subheading - centered with 80% width */}
         <div className="mb-10">
-          <div className="mx-auto w-[80%]">
-            <p className="text-gray-700 text-sm md:text-base leading-relaxed line-clamp-3 overflow-hidden">
+          <div className="mx-auto w-[90%]">
+            <p className="text-gray-800 text-sm md:text-base leading-relaxed line-clamp-3 overflow-hidden">
               This tool helps you estimate the costs of starting your MVNO, covering everything from setup
               and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear
               financial roadmap for a successful launch. Ideal for startups and established operators alike, 
