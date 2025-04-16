@@ -42,7 +42,7 @@ function App() {
               <h1 className="text-3xl md:text-4xl font-bold text-[#144C94]">
                 MVNO Launch Calculator
               </h1>
-              {/* Adjust icon size to match heading */}
+              {/* Adjusted icon size to match heading */}
               <Calculator className="h-8 w-8 md:h-9 md:w-9 text-[#F7470F]" />
             </div>
           </div>
@@ -59,11 +59,11 @@ function App() {
           </a>
         </div>
 
-        {/* Subheading - smaller text, 2–3 lines */}
-        <div className="text-center mb-10">
-          <p className="mx-auto text-gray-700 text-sm md:text-base leading-relaxed max-w-2xl">
+        {/* Subheading - full width, up to 3 lines */}
+        <div className="mb-10">
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed line-clamp-3 overflow-hidden">
             This tool helps you estimate the costs of starting your MVNO, covering everything from setup
-            and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear 
+            and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear
             financial roadmap for a successful launch. Ideal for startups and established operators alike, 
             it ensures you're prepared for the financial aspects of entering the MVNO market.
           </p>
