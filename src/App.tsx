@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Network, ExternalLink } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 import { MVNOInputs } from './types';
 import { calculateProjections } from './utils/calculations';
 import { InputSection } from './components/InputSection';
@@ -33,24 +33,14 @@ function App() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
-            <Network className="h-8 w-8 text-[#F7470F]" />
-            <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
             <img
-              src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/fdb3aca6-896d-4a4d-8436-94bf81175741.png"
-              alt="Spenza Logo"
+              src="https://res.cloudinary.com/dw2h36vj0/image/upload/v1744803023/ngjbeca4p4xg7urltb1v.jpg"
+              alt="New Logo"
               className="h-8 w-auto"
             />
+            <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
             <Calculator className="h-8 w-8 text-[#F7470F]" />
           </div>
-          <a
-            href="https://spenza.com/contact-the-telecom-expense-management-experts/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#F7470F] hover:bg-[#d63d0d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F7470F] transition-colors duration-200"
-          >
-            Want to Launch an MVNO? Contact Us
-            <ExternalLink className="ml-2 h-5 w-5" />
-          </a>
         </div>
 
         <div className="space-y-8">
