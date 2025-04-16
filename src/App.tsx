@@ -11,7 +11,7 @@ const initialInputs: MVNOInputs = {
   initialSubscribers: 1000,
   arpu: 40,
   acpu: 30,
-  monthlyGrowthRate: 0.10,
+  monthlyGrowthRate: 0.1,
   churnRate: 0.02,
   projectionMonths: 12
 };
@@ -20,7 +20,7 @@ function App() {
   const [inputs, setInputs] = useState<MVNOInputs>(initialInputs);
 
   const handleInputChange = (field: keyof MVNOInputs, value: number) => {
-    setInputs(prev => ({ ...prev, [field]: value }));
+    setInputs((prev) => ({ ...prev, [field]: value }));
   };
 
   const projections = calculateProjections(inputs);
@@ -54,20 +54,13 @@ function App() {
           </a>
         </div>
 
-        {/* Subheading */}
-        <div className="text-center mb-6">
-          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
-            The MVNO Launch Cost Calculator breaks down the essential costs of starting your mobile business,
-            enabling smart budgeting and strategic decision-making.
-          </p>
-        </div>
-
-        {/* Additional Sub Copy */}
+        {/* Subheading - now replaced with new text */}
         <div className="text-center mb-10">
-          <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-            This tool helps you estimate the costs of starting your MVNO, covering everything from setup and licensing to ongoing operations. 
-            It simplifies budgeting and planning, giving you a clear financial roadmap for a successful launch. 
-            Ideal for startups and established operators alike, it ensures you're prepared for the financial aspects of entering the MVNO market.
+          <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
+            This tool helps you estimate the costs of starting your MVNO, covering everything from setup 
+            and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear 
+            financial roadmap for a successful launch. Ideal for startups and established operators alike, 
+            it ensures you're prepared for the financial aspects of entering the MVNO market.
           </p>
         </div>
 
@@ -76,7 +69,9 @@ function App() {
           <div className="bg-white rounded-xl shadow p-6 border-t-4 border-[#144C94]">
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-[#3A3A3A]">Input Parameters</h2>
-              <p className="mt-1 text-sm text-gray-600">Please enter all monetary values in US dollars ($)</p>
+              <p className="mt-1 text-sm text-gray-600">
+                Please enter all monetary values in US dollars ($)
+              </p>
             </div>
             <InputSection inputs={inputs} onChange={handleInputChange} />
           </div>
