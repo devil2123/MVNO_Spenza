@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MonthlyProjection, MVNOInputs } from '../types';
 import { formatCurrency, formatNumber } from '../utils/calculations';
+import { EmailModal } from './EmailModal';
+import { Mail } from 'lucide-react';
 
 interface ResultsSectionProps {
   projections: MonthlyProjection[];
@@ -8,6 +10,9 @@ interface ResultsSectionProps {
 }
 
 export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
   if (!projections || projections.length === 0) {
     return (
       <div className="flex items-center justify-center p-8 bg-white rounded-lg shadow-lg">
@@ -23,14 +28,36 @@ export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
     return amount < 0 ? 'text-red-600' : 'text-green-600';
   };
 
+  const handleEmailSubmit = (email: string) => {
+    // Here you would typically integrate with your email service
+    console.log('Sending analysis to:', email);
+    setSuccessMessage(`Analysis sent to ${email}`);
+    setTimeout(() => setSuccessMessage(''), 5000);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-[#3A3A3A]">Projections & Analysis</h2>
-        <p className="text-sm text-gray-600">
-          Financial projections for the next {inputs.projectionMonths} months
-        </p>
+        <div>
+          <h2 className="text-xl font-semibold text-[#3A3A3A]">Projections & Analysis</h2>
+          <p className="text-sm text-gray-600">
+            Financial projections for the next {inputs.projectionMonths} months
+          </p>
+        </div>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="inline-flex items-center px-4 py-2 bg-[#144C94] text-white rounded-md hover:bg-[#0f3a70] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#144C94] transition-colors duration-200"
+        >
+          <Mail className="w-4 h-4 mr-2" />
+          Mail the Analysis
+        </button>
       </div>
+
+      {successMessage && (
+        <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md mb-4">
+          {successMessage}
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#144C94]">
@@ -41,7 +68,7 @@ export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
         </div>
         
         <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#F7470F]">
-          <h3 className="text-lg font-medium text-[#3A3A3A]">Final Month Revenue</h3>
+          <h3 className="text-lg font-medium text-[#3A3A3A]">Monthly Revenue</h3>
           <p className="mt-2 text-3xl font-semibold text-[#F7470F]">
             {formatCurrency(lastMonth.revenue)}
           </p>
@@ -88,6 +115,12 @@ export function ResultsSection({ projections, inputs }: ResultsSectionProps) {
           </tbody>
         </table>
       </div>
+
+      <EmailModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={handleEmailSubmit}
+      />
     </div>
   );
 }
