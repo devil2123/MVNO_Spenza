@@ -9,7 +9,7 @@ const initialInputs: MVNOInputs = {
   // Upfront and Operating Costs
   upfrontCosts: 50000,
   monthlyOperatingExpenses: 7500,
-  
+
   // Revenue & Subscriber Metrics
   initialSubscribers: 1000,
   arpu: 40,
@@ -21,7 +21,7 @@ const initialInputs: MVNOInputs = {
 
 function App() {
   const [inputs, setInputs] = useState<MVNOInputs>(initialInputs);
-  
+
   const handleInputChange = (field: keyof MVNOInputs, value: number) => {
     setInputs(prev => ({ ...prev, [field]: value }));
   };
@@ -35,7 +35,11 @@ function App() {
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
             <Network className="h-8 w-8 text-[#F7470F]" />
             <h1 className="text-3xl font-bold text-[#144C94]">MVNO Launch Calculator</h1>
-            <span className="text-[#F7470F] font-semibold">by Spenza</span>
+            <img
+              src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/fdb3aca6-896d-4a4d-8436-94bf81175741.png"
+              alt="Spenza Logo"
+              className="h-8 w-auto"
+            />
             <Calculator className="h-8 w-8 text-[#F7470F]" />
           </div>
           <a
