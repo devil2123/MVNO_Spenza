@@ -103,6 +103,21 @@ export function InputSection({ inputs, onChange }: InputSectionProps) {
         </div>
 
         <div className={inputGroupClasses}>
+          <label className={labelClasses}>Monthly Growth Rate</label>
+          <div className="relative">
+            <input
+              type="number"
+              value={inputs.monthlyGrowthRate * 100 || ''}
+              onChange={(e) => onChange('monthlyGrowthRate', (e.target.value === '' ? 0 : parseFloat(e.target.value)) / 100)}
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 pr-8 text-black focus:outline-none focus:ring-2 focus:ring-[#F7470F] focus:border-[#F7470F] transition-colors duration-200"
+              placeholder="0"
+            />
+            <span className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500">%</span>
+          </div>
+          <p className={descriptionClasses}>Expected monthly subscriber growth</p>
+        </div>
+
+        <div className={inputGroupClasses}>
           <label className={labelClasses}>ARPU - Average Revenue Per User</label>
           <div className="relative">
             <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">$</span>
@@ -119,20 +134,6 @@ export function InputSection({ inputs, onChange }: InputSectionProps) {
           </p>
         </div>
 
-        <div className={inputGroupClasses}>
-          <label className={labelClasses}>Monthly Growth Rate</label>
-          <div className="relative">
-            <input
-              type="number"
-              value={inputs.monthlyGrowthRate * 100 || ''}
-              onChange={(e) => onChange('monthlyGrowthRate', (e.target.value === '' ? 0 : parseFloat(e.target.value)) / 100)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 pr-8 text-black focus:outline-none focus:ring-2 focus:ring-[#F7470F] focus:border-[#F7470F] transition-colors duration-200"
-              placeholder="0"
-            />
-            <span className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500">%</span>
-          </div>
-          <p className={descriptionClasses}>Expected monthly subscriber growth</p>
-        </div>
 
         <div className={inputGroupClasses}>
           <label className={labelClasses}>Monthly Churn Rate</label>
