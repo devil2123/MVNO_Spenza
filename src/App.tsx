@@ -61,15 +61,16 @@ function App() {
 
                {/* Subheading - centered with 80% width */}
         <div className="mb-10">
-          <div className="mx-auto w-[90%]">
-            <p className="text-gray-800 text-sm md:text-base leading-relaxed line-clamp-3 overflow-hidden">
-              This tool helps you estimate the costs of starting your MVNO, covering everything from setup
-              and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear
-              financial roadmap for a successful launch. Ideal for startups and established operators alike, 
-              it ensures you're prepared for the financial aspects of entering the MVNO market.
-            </p>
-          </div>
-        </div>
+  <div className="mx-auto w-[90%]">
+    <p className="text-gray-800 text-sm md:text-base leading-relaxed line-clamp-3 overflow-hidden">
+      This tool helps you estimate the costs of starting your MVNO, covering everything from setup
+      and licensing to ongoing operations. It simplifies budgeting and planning, giving you a clear
+      financial roadmap for a successful launch. Ideal for <span className="italic">startups and established operators</span> alike, 
+      it ensures you're prepared for the financial aspects of entering the MVNO market.
+    </p>
+  </div>
+</div>
+
 
 
         {/* Calculator Sections */}
