@@ -7,7 +7,7 @@ import { ResultsSection } from './components/ResultsSection';
 
 const initialInputs: MVNOInputs = {
   upfrontCosts: 50000,
-  monthlyOperatingExpenses: 7500,
+  monthlyOperatingExpenses: 7000,
   initialSubscribers: 1000,
   arpu: 40,
   acpu: 30,
